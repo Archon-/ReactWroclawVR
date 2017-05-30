@@ -5,7 +5,8 @@ import {
   Pano,
   Text,
   View,
-  Model
+  Model,
+  PointLight
 } from 'react-vr';
 
 export default class ReactWroclawVR extends React.Component {
@@ -13,10 +14,12 @@ export default class ReactWroclawVR extends React.Component {
     return (
       <View>
         <Pano source={asset('chess-world.jpg')}/>
+        <PointLight style={{color:'white', transform:[{translate : [50, 100, 1000]}]}} />
         <Model
           source={{
             obj: asset('sniper-rifle/sniper-rifle.obj'),
-            mtl: asset('sniper-rifle/sniper-rifle.mtl')
+            mtl: asset('sniper-rifle/sniper-rifle.mtl'),
+            texture: asset('aniper-rifle/textures/Sniper_KSR_29_spec.jpg')
           }}
           style={{
             transform: [

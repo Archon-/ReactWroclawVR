@@ -16,7 +16,8 @@ export default class ReactWroclawVR extends React.Component {
         <Model
           source={{
             obj: asset('sniper-rifle/sniper-rifle.obj'),
-            mtl: asset('sniper-rifle/sniper-rifle.mtl')
+            mtl: asset('sniper-rifle/sniper-rifle.mtl'),
+            texture:asset('sniper-rifle/textures/KSR29sniperrifle_Base_Color.jpg')
           }}
           style={{
             transform: [
@@ -31,4 +32,4 @@ export default class ReactWroclawVR extends React.Component {
   }
 };
 
-AppRegistry.registerComponent('ReactWroclawVR', () => ReactWroclawVR);
+AppRegistry.registerComponent('ReactWroclawVR', () => SniperRifle);
