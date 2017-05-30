@@ -10,6 +10,7 @@ import {
   asset
 } from 'react-vr';
 import Ship from  "./components/forest/Ship"
+import House from "./components/forest/House";
 
 export default class ReactWroclawVR extends React.Component {
   render() {
@@ -22,6 +23,8 @@ export default class ReactWroclawVR extends React.Component {
           style={{color: 'white', transform: [{translate: [0, 600, 300]}]}}
         />
         <Pano source={asset('forest/heaven.png')} />
+        <House />
+        <Ship/>
         <Model
           source={{obj: asset('forest/plane.obj'), mtl: asset('forest/plane.mtl')}}
           lit
@@ -29,7 +32,7 @@ export default class ReactWroclawVR extends React.Component {
             transform: [{scale: [1, 1, 1]}, {translate: [0, -1, 0]}],
           }}
         />
-        <Ship/>
+
       </View>
     );
   }
