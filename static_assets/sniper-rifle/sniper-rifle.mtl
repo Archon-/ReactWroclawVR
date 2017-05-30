@@ -3,13 +3,14 @@
 
 newmtl KSR29sniperrifle
 Ns 96.078431
-Ka 1.000000 1.000000 1.000000
-Kd 0.250811 0.250811 0.250811
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd textures\Sniper_KSR_29_Col.jpg
-map_Bump textures\Sniper_KSR_29_Col.jpg
-map_Ks textures\Sniper_KSR_29_Col.jpg
+map_Ka textures\KSR29sniperrifle_low_Material.005_AmbientOcclusion.jpg
+map_Kd textures\KSR29sniperrifle_low_Material.005_AmbientOcclusion.jpg
+map_d textures\KSR29sniperrifle_low_Material.005_AmbientOcclusion.jpg
+map_Ks textures\KSR29sniperrifle_low_Material.005_AmbientOcclusion.jpg

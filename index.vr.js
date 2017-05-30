@@ -17,10 +17,9 @@ export default class ReactWroclawVR extends React.Component {
         <PointLight style={{color:'white', transform:[{translate : [50, 100, 1000]}]}} />
         <Model
           source={{
-            obj: asset('sniper-rifle/sniper-rifle.obj'),
-            mtl: asset('sniper-rifle/sniper-rifle.mtl'),
-            texture: asset('aniper-rifle/textures/Sniper_KSR_29_spec.jpg')
+            obj: asset('sniper-rifle/sniper-rifle.obj')
           }}
+          texture={asset('sniper-rifle/textures/Sniper_KSR_29_Col.jpg')}
           style={{
             transform: [
               {translate: [0, 0, -7]},
