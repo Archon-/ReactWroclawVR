@@ -5,7 +5,8 @@ import {
   Pano,
   Text,
   View,
-  VrButton
+  VrButton,
+  Video
 } from 'react-vr';
 
 export default class CollibraOffice3 extends React.Component {
@@ -30,6 +31,16 @@ export default class CollibraOffice3 extends React.Component {
             }}>
           </Text>
         </VrButton> 
+        <VrButton onClick={() => {this.props.move("Video")}}>
+            <Video 
+            style={{
+                width: 28.0,
+                height:18.0,
+                transform: [{translate: [-26.2, 16, -63.7]}, {rotateY: "4deg"}]
+            }} 
+            source={{uri: asset('coaster.webm').uri}} 
+            />
+          </VrButton>  
       </View>
     );
   }
