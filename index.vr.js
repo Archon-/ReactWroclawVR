@@ -5,29 +5,61 @@ import {
   Pano,
   Text,
   View,
-  Model,
-  PointLight
+  VrButton
 } from 'react-vr';
 
 export default class ReactWroclawVR extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {view: "alps"};
+    }
+
+  switchView() {
+    const newState = this.state.view === "alps" ? "desert" : "alps";
+    console.log("switching", newState);
+    this.setState(() => {
+      return {
+        view: this.state.view === "alps" ? "desert" : "alps"
+      };
+    });
+  }
+
   render() {
+    const {view} = this.state;
+    const oppositView = view === "alps" ? "desert" : "alps";
+
+console.log(view);
     return (
       <View>
-        <Pano source={asset('chess-world.jpg')}/>
-        <PointLight style={{color:'white', transform:[{translate : [50, 100, 1000]}]}} />
-        <Model
-          source={{
-            obj: asset('sniper-rifle/sniper-rifle.obj')
-          }}
-          texture={asset('sniper-rifle/textures/Sniper_KSR_29_Col.jpg')}
-          style={{
-            transform: [
-              {translate: [0, 0, -7]},
-              {scale: 1}
-            ]
-          }}
-          lit={true}
-        />
+        <Pano source={{
+          uri: [
+            asset(`${view}/RIGHT.jpg`).uri,
+            asset(`${view}/LEFT.jpg`).uri,
+            asset(`${view}/TOP.jpg`).uri,
+            asset(`${view}/DOWN.jpg`).uri,
+            asset(`${view}/BACK.jpg`).uri,
+            asset(`${view}/FRONT.jpg`).uri 
+          ] 
+        }} />
+        <VrButton
+          onClick={()=>this.switchView()}>
+          <Text
+            style={{
+              backgroundColor: '#222222',
+              color: '#509e2f',
+              borderRadius: 0.2,
+              fontSize: 0.8,
+              fontWeight: '400',
+              layoutOrigin: [0.5, 0.5],
+              paddingLeft: 0.2,
+              paddingRight: 0.2,
+              textAlign: 'center',
+              textAlignVertical: 'center',
+              transform: [{translate: [0, 0, -8]}],
+            }}>
+            Go to {oppositView}
+          </Text>
+        </VrButton>  
       </View>
     );
   }
