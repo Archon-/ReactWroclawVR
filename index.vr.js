@@ -12,6 +12,7 @@ import CollibraOffice1 from './components/CollibraOffice1';
 import CollibraOffice2 from './components/CollibraOffice2';
 import CollibraOffice3 from './components/CollibraOffice3';
 import Video from './components/Video';
+import RifleOnDesert from './components/RifleOnDesert';
 
 export default class ReactWroclawVR extends React.Component {
   constructor(props) {
@@ -24,7 +25,8 @@ export default class ReactWroclawVR extends React.Component {
       "CollibraOffice1": CollibraOffice1,
       "CollibraOffice2": CollibraOffice2,
       "CollibraOffice3": CollibraOffice3,
-      "Video": Video
+      "Video": Video,
+      "RifleOnDesert": RifleOnDesert
     };
     const Component = Components[this.state.view];
 

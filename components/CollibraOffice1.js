@@ -30,6 +30,24 @@ export default class CollibraOffice1 extends React.Component {
               height: 2
             }}>
           </Text>
+        </VrButton>
+        <VrButton
+          onClick={()=>this.props.move("RifleOnDesert")}
+          style={{width: 1, height: 1}}
+        >
+          <Text
+            style={{
+              backgroundColor: '#222222',
+              color: '#509e2f',
+              borderRadius: 0.05,
+              fontWeight: '400',
+              layoutOrigin: [0.5, 0.5],
+              paddingLeft: 0.2,
+              paddingRight: 0.2,
+              transform: [{translate: [-1, -0.4, -3]}],
+            }}>
+            Go to desert
+          </Text>
         </VrButton> 
       </View>
     );
