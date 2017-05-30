@@ -14,7 +14,7 @@ export default class ReactWroclawVR extends React.Component {
     return (
       <View>
         <Pano source={asset('chess-world.jpg')}/>
-        
+        <PointLight style={{color:'white', transform:[{translate : [50, 100, 1000]}]}} />
         <Model
           source={{
             obj: asset('sniper-rifle/sniper-rifle.obj')
