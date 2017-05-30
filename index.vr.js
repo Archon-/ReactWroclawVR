@@ -5,61 +5,30 @@ import {
   Pano,
   Text,
   View,
-  VrButton
+  VideoPano
 } from 'react-vr';
 
-export default class ReactWroclawVR extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {view: "alps"};
-    }
+import CollibraOffice1 from './components/CollibraOffice1';
+import CollibraOffice2 from './components/CollibraOffice2';
+import CollibraOffice3 from './components/CollibraOffice3';
 
-  switchView() {
-    const newState = this.state.view === "alps" ? "desert" : "alps";
-    console.log("switching", newState);
-    this.setState(() => {
-      return {
-        view: this.state.view === "alps" ? "desert" : "alps"
-      };
-    });
+export default class ReactWroclawVR extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {view: "CollibraOffice1"};
   }
 
   render() {
-    const {view} = this.state;
-    const oppositView = view === "alps" ? "desert" : "alps";
+    const Components = {
+      "CollibraOffice1": CollibraOffice1,
+      "CollibraOffice2": CollibraOffice2,
+      "CollibraOffice3": CollibraOffice3
+    };
+    const Component = Components[this.state.view];
 
-console.log(view);
     return (
       <View>
-        <Pano source={{
-          uri: [
-            asset(`${view}/RIGHT.jpg`).uri,
-            asset(`${view}/LEFT.jpg`).uri,
-            asset(`${view}/TOP.jpg`).uri,
-            asset(`${view}/DOWN.jpg`).uri,
-            asset(`${view}/BACK.jpg`).uri,
-            asset(`${view}/FRONT.jpg`).uri 
-          ] 
-        }} />
-        <VrButton
-          onClick={()=>this.switchView()}>
-          <Text
-            style={{
-              backgroundColor: '#222222',
-              color: '#509e2f',
-              borderRadius: 0.2,
-              fontSize: 0.8,
-              fontWeight: '400',
-              layoutOrigin: [0.5, 0.5],
-              paddingLeft: 0.2,
-              paddingRight: 0.2,
-              textAlign: 'center',
-              textAlignVertical: 'center',
-              transform: [{translate: [0, 0, -8]}],
-            }}>
-            Go to {oppositView}
-          </Text>
-        </VrButton>  
+        <Component move={(view) => {this.setState({view: view})}} />
       </View>
     );
   }
