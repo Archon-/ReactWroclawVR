@@ -40,7 +40,7 @@ export default class CollibraOffice3 extends React.Component {
             }} 
             source={{uri: asset('coaster.webm').uri}} 
             />
-          </VrButton>  
+        </VrButton>
       </View>
     );
   }
